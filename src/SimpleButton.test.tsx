@@ -13,5 +13,4 @@ test("ボタンをクリックするとON/OFFの表示が切り替わる", () =>
   userEvent.click(simpleButton);
   // ONに切り替わるか判定
   expect(simpleButton).toHaveTextContent("ON");
-  
 });

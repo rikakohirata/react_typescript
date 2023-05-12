@@ -8,6 +8,5 @@ export const SimpleButton: () => JSX.Element = () => {
     setState((prevState) => !prevState);
   };
 
-  return <button onClick={handleClick}>{state? "ON" : "OFF"}</button>
-}
-
+  return <button onClick={handleClick}>{state ? "ON" : "OFF"}</button>;
+};
