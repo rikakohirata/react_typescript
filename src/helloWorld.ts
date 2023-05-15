@@ -1,3 +1,2 @@
-const hello = (name: string) => {
-  console.log("Hello,World " + name);
-};
+export const hello_world = "Hello World";
+console.log(hello_world);

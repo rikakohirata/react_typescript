@@ -1,0 +1,8 @@
+// TypeScriptコンパイラの設定を記述する
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true
+  },
+  "include": ["src", ".*.js", "*.js"]
+}
