@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import logo from "./logo.svg";
-import "./App.css";
-import Button from '@mui/material/Button';  // Material UI
+import "./App.css";  // cssをインポート
+import Button from '@mui/material/Button';  // Material UIのButtonをインポート
 
 function App() {
   return (
@@ -21,13 +21,16 @@ function App() {
           Learn React
         </a>
       </header> */}
+
       <header className="App-header">
         {/* いいねボタンを表示 */}
         <LikeButton />
         <br />
+
         {/* Material UIで表示 */}
         <Button variant="contained">Hello World</Button>
       </header>
+      
     </div>
   );
 }
