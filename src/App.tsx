@@ -2,6 +2,12 @@ import React, { useState } from "react";
 // import logo from "./logo.svg";
 import "./App.css";  // cssをインポート
 import Button from '@mui/material/Button';  // Material UIのButtonをインポート
+import styled from "@emotion/styled";  // // emotionでCSSを調整
+
+// ボタンの中の文字を小文字にするため
+const TextButton = styled(Button)`
+  text-transform: none;
+`;
 
 function App() {
   return (
@@ -28,7 +34,11 @@ function App() {
         <br />
 
         {/* Material UIで表示 */}
-        <Button variant="contained">Hello World</Button>
+        <TextButton>text</TextButton>
+        <br />
+        <Button variant="contained">色で塗りつぶされたボタン</Button>
+        <br />
+        <Button variant="outlined">外枠の線のみのボタン</Button>
       </header>
       
     </div>
