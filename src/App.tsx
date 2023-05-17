@@ -2,13 +2,23 @@ import React, { useState } from "react";
 // import logo from "./logo.svg";
 import "./App.css";                               // cssをインポート
 import Button from '@mui/material/Button';        // Material UIのButtonをインポート
-import { Box, Typography } from '@mui/material';  // まとめてインポート
+import { Box, Typography, createTheme, ThemeProvider } from '@mui/material';  // まとめてインポート
 import styled from "@emotion/styled";             // emotionでCSSを調整
 
 // ボタンの中の文字を小文字にするため
-const TextButton = styled(Button)`
-  text-transform: none;
-`;
+const TextButton = styled(Button)
+    `text-transform: none;`;
+
+// ThemeProviderrのthemeプロパティに渡す
+const theme = createTheme({
+  palette: {
+      primary: {
+      main: "#42a5f5",
+      light: "#1976d2",
+      dark: "#1565c0",
+      },
+  }
+});
 
 function App() {
   return (
@@ -55,10 +65,9 @@ function App() {
             外枠の線のみのボタン
         </Button>
 
+        {/* Boxでコンポーネントをラップしスタイルを調整 */}
         <Box component="div" sx={{
-            height: 300,
-            width: 350,
-            borderBottom: 1,
+            mb: 3,
             ":hover": {
             opacity: ".8",
             },
@@ -68,6 +77,17 @@ function App() {
         }}>
             <Typography paragraph={true}>Hello World!</Typography>
         </Box>
+
+        {/* themeオブジェクトでオリジナルで定義したスタイルを使用 */}
+        <ThemeProvider theme={theme}>
+          <Box component="div">
+              <Button color="primary" sx={{
+                  color: theme.palette.primary.main,
+              }}>
+                  ボタン
+              </Button>
+          </Box>
+        </ThemeProvider>
       </header>
       
     </div>
