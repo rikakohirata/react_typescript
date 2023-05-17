@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 // import logo from "./logo.svg";
-import "./App.css";  // cssをインポート
-import Button from '@mui/material/Button';  // Material UIのButtonをインポート
-import styled from "@emotion/styled";  // // emotionでCSSを調整
+import "./App.css";                               // cssをインポート
+import Button from '@mui/material/Button';        // Material UIのButtonをインポート
+import { Box, Typography } from '@mui/material';  // まとめてインポート
+import styled from "@emotion/styled";             // emotionでCSSを調整
 
 // ボタンの中の文字を小文字にするため
 const TextButton = styled(Button)`
@@ -30,15 +31,43 @@ function App() {
 
       <header className="App-header">
         {/* いいねボタンを表示 */}
+        <br />
         <LikeButton />
         <br />
 
         {/* Material UIで表示 */}
-        <TextButton>text</TextButton>
-        <br />
-        <Button variant="contained">色で塗りつぶされたボタン</Button>
-        <br />
-        <Button variant="outlined">外枠の線のみのボタン</Button>
+        {/* sxプロパティを用いてCSSのようにスタイリング */}
+        <TextButton sx={{
+          mb: 3,
+        }}>
+            text
+        </TextButton>
+
+        <Button variant="contained" sx={{
+          mb: 3,
+        }}>
+            色で塗りつぶされたボタン
+        </Button>
+
+        <Button variant="outlined" sx={{
+          mb: 3,
+        }}>
+            外枠の線のみのボタン
+        </Button>
+
+        <Box component="div" sx={{
+            height: 300,
+            width: 350,
+            borderBottom: 1,
+            ":hover": {
+            opacity: ".8",
+            },
+            "@media screen and (min-width:400px)": {
+                width: 200,
+            },
+        }}>
+            <Typography paragraph={true}>Hello World!</Typography>
+        </Box>
       </header>
       
     </div>
