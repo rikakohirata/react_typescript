@@ -1,4 +1,4 @@
-# TypeScriptをベースのReactプロジェクト
+# TypeScriptベースのReactプロジェクト
 
 **目的：**<br />
 TypeScript × Reactの学習のため
